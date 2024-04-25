@@ -21,7 +21,7 @@ body {
   font-family: "Arial", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background-color: #fff;
+  background-color: #E3F2FD;
   color: #222;
 }
 
@@ -73,6 +73,7 @@ select:-webkit-autofill:focus {
 .container {
   width: 100%;
   max-width: 1200;
+  padding-top: 100px;
   padding-left: 50px;
   padding-right: 50px;
   margin-left: auto;
@@ -83,4 +84,203 @@ select:-webkit-autofill:focus {
 
 .main-content {
   flex-grow: 1;
+}
+
+
+.image-editor-inner {
+  width: 850px;
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+
+.image-editor-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.filter-wrapper {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.filter {
+  margin-right: 15px;
+}
+
+
+.image-editor-filter {
+  width: 300px;
+  padding: 15px;
+  border: 1px solid #777;
+  border-radius:5px;
+}
+
+
+.filter-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+
+}
+
+.filter-tools {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.filter-tool {
+  width: 130px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border:1px solid black;
+  border-radius: 5px;
+  color: black;
+  background-color: transparent;
+  cursor: pointer;
+
+}
+
+.filter-tool-active {
+  background-color: blue;
+  color: #fff;
+  border-color:blue;
+}
+
+.filter-tool:nth-child(odd) {
+  margin-right: 8px;
+}
+
+.filter-tool:hover {
+  opacity: 0.6;
+}
+
+.filter-control {
+  margin-bottom: 15px;
+}
+
+.filter-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.filter-name, .filter-value {
+  margin: 0;
+}
+
+.filter-input {
+  width: 100%;
+}
+
+.rotate {
+  margin-bottom: 20px;
+}
+.rotate-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+
+.rotate-btn {
+  padding: 8px 15px;
+  border: 1px solid #777;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.rotate-btn:not(:last-child) {
+  margin-right: 8px;
+}
+
+.rotate-btn:hover {
+  opacity: 0.8;
+}
+
+.rotate-image {
+  object-fit: contain;
+}
+
+.left-rotate {
+  transform: rotateZ(90deg);
+}
+
+.right-rotate {
+  transform: rotateZ(90deg);
+}
+
+.vertical-rotate {
+  transform: rotateY(180deg);
+}
+
+.horizantal-rotate {
+  transform: rotateX(180deg);
+}
+
+.image-editor-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-editor-content img {
+  width: 475px;
+}
+
+.image-editor-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.btn {
+  padding: 12px 15px;
+  border-radius:5px;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.reset-filter {
+  border: 1px solid #777;
+  background-color: transparent;
+}
+
+.reset-filter:hover {
+  background-color: #777;
+  color: #fff;
+}
+
+.choose-image {
+  border: 0;
+  background-color: #777;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.choose-image:hover {
+  opacity: 1;
+}
+
+.file-input {
+}
+
+.save-image {
+  border: 0;
+  background-color: blue;
+  opacity: 0.8;
+  color: #fff;
+}
+
+.save-image:hover {
+  opacity: 1;
 }

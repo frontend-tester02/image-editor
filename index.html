@@ -11,59 +11,55 @@
 <body>
   <div class="container">
     <div class="image-editor-inner">
-      <div class="image-editor-wrapper">
         <h1 class="image-editor-title">Easy Image Editor</h1>
-        <div class="image-editor-filter filter">
-          <h2 class="filter-title">Filters</h2>
-          <div class="filter-tools">
-            <button type="button" class="filter-tool filter-brightness">Brightness</button>
-            <button type="button" class="filter-tool filter-saturation">Saturation</button>
-            <button type="button" class="filter-tool filter-inversion">Inversion</button>
-            <button type="button" class="filter-tool filter-grayscale">Grayscale</button>
-          </div>
-
-          <div class="filter-control">
-            <div class="filter-info">
-              <p class="filter-name">Brightness</p>
-              <p class="filter-value">100%</p>
+          <div class="filter-wrapper">
+            <div class="image-editor-filter filter">
+              <h2 class="filter-title">Filters</h2>
+              <div class="filter-tools">
+                <button type="button" class="filter-tool filter-tool-active filter-brightness">Brightness</button>
+                <button type="button" class="filter-tool filter-saturation">Saturation</button>
+                <button type="button" class="filter-tool filter-inversion">Inversion</button>
+                <button type="button" class="filter-tool filter-grayscale">Grayscale</button>
+              </div>
+              <div class="filter-control">
+                <div class="filter-info">
+                  <p class="filter-name">Brightness</p>
+                  <p class="filter-value">100%</p>
+                </div>
+                <input type="range" class="filter-input" min="0" max="200" aria-label="Filter input">
+              </div>
+              <div class="rotate">
+                <h4 class="rotate-title">Rotate & Flip</h4>
+                <div class="rotate-buttons">
+                  <button type="button" class="rotate-btn left">
+                    <img src="image/rotate-left.svg" alt="Rotate left" class="rotate-image">
+                  </button>
+                  <button type="button" class="rotate-btn right">
+                    <img src="image/rotate-right.svg" alt="Rotate right" class="rotate-image" width="24" height="24">
+                  </button>
+                  <button type="button" class="rotate-btn vertical">
+                    <img src="image/vertical.svg" alt="Vertical" class="rotate-imgae">
+                  </button>
+                  <button type="button" class="rotate-btn horizantal">
+                    <img src="image/horizontal.svg" alt="Horizontal" class="rotate-image">
+                  </button>
+                </div>
+              </div>
             </div>
-            <input type="range" class="filter-input" min="0" max="200" aria-label="Filter input">
-          </div>
-
-          <div class="rotate">
-            <h3 class="rotate-title">Rotate & Flip</h3>
-
-            <div class="rotate-buttons">
-              <button type="button" class="left">
-                <img src="image/rotate-left.svg" alt="Rotate left" class="rotate-image">
-              </button>
-              <button type="button" class="right">
-                <img src="image/rotate-right.svg" alt="Rotate right" class="rotate-image">
-              </button>
-              <button type="button" class="vertical">
-                <img src="image/vertical.svg" alt="Vertical" class="rotate-imgae">
-              </button>
-              <button type="button" class="horizantal">
-                <img src="image/horizontal.svg" alt="Horizontal" class="rotate-image">
-              </button>
+            <div class="image-editor-content">
+              <img  src="image/image-placeholder.svg" alt="Image placeholder">
             </div>
           </div>
-        </div>
 
-        <div class="image-editor-content">
-          <img src="image/image-placeholder.svg" alt="Image placeholder">
+          <div class="image-editor-control">
+            <button type="reset" class="btn reset-filter">Reset filter</button>
+            <div class="image-editor-choose">
+              <input type="file" class="file-input" accept="image/*" aria-label="File" hidden>
+              <button type="button" class="btn choose-image">Choose image</button>
+              <button type="button" class="btn save-image">Save image</button>
+            </div>
         </div>
       </div>
-
-      <div class="image-editor-control">
-        <button type="reset" class="reset-filter">Reset filter</button>
-        <div class="choose-image">
-          <input type="file" class="file-input" accept="image/*" aria-label="File" hidden>
-          <button type="button" class="choose-image">Choose image</button>
-          <button type="button" class="save-image">Save image</button>
-        </div>
-      </div>
-    </div>
   </div>
 
 
