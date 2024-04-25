@@ -4,11 +4,66 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
-  <title>Project</title>
+  <title>Image Editor</title>
 </head>
 <body>
+  <div class="container">
+    <div class="image-editor-wrapper">
+      <h1 class="image-editor-title">Easy Image Editor</h1>
+      <div class="image-editor-filter filter">
+        <h2 class="filter-title">Filters</h2>
+        <div class="filter-tools">
+          <button type="button" class="filter-tool filter-brightness">Brightness</button>
+          <button type="button" class="filter-tool filter-saturation">Saturation</button>
+          <button type="button" class="filter-tool filter-inversion">Inversion</button>
+          <button type="button" class="filter-tool filter-grayscale">Grayscale</button>
+        </div>
+
+        <div class="filter-control">
+          <div class="filter-info">
+            <p class="filter-name">Brightness</p>
+            <p class="filter-value">100%</p>
+          </div>
+          <input type="range" class="filter-input" min="0" max="200" aria-label="Filter input">
+        </div>
+
+        <div class="rotate">
+          <h3 class="rotate-title">Rotate & Flip</h3>
+
+          <div class="rotate-buttons">
+            <button type="button" class="left">
+              <img src="image/rotate-left.svg" alt="Rotate left" class="rotate-image">
+            </button>
+            <button type="button" class="right">
+              <img src="image/rotate-right.svg" alt="Rotate right" class="rotate-image">
+            </button>
+            <button type="button" class="vertical">
+              <img src="image/vertical.svg" alt="Vertical" class="rotate-imgae">
+            </button>
+            <button type="button" class="horizantal">
+              <img src="image/horizontal.svg" alt="Horizontal" class="rotate-image">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-editor-content">
+        <img src="image/image-placeholder.svg" alt="Image placeholder">
+      </div>
+    </div>
+
+    <div class="image-editor-control">
+      <button type="reset" class="reset-filter">Reset filter</button>
+      <div class="choose-image">
+        <input type="file" class="file-input" accept="image/*" aria-label="File" hidden>
+        <button type="button" class="choose-image">Choose image</button>
+        <button type="button" class="save-image">Save image</button>
+      </div>
+    </div>
+  </div>
 
 
   <script src="js/main.js"></script>
