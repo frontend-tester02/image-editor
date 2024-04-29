@@ -27,7 +27,17 @@ filterToolBtn.forEach((btn) => {
     filterName.textContent = btn.textContent;
 
     if(btn.classList.contains('filter-brightness')) {
-
+      filterInput.max = '200';
+      filterInput.value = brightness;
+    } else if(btn.classList.contains('filter-saturation')) {
+      filterInput.max = '200';
+      filterInput.value = saturation;
+    } else if(btn.classList.contains('filter-inversion')) {
+      filterInput.max = '100';
+      filterInput.value = inversion
+    } else {
+      filterInput.max = '100';
+      filterInput.value = grayscale
     }
   })
 })
@@ -43,11 +53,11 @@ filterToolBtn.forEach((btn) => {
   // Update filter
   function updateFilter() {
     const selectedItem = document.querySelector('.filter-tool-active');
-    if(selectedItem.classList === 'filter-brightness') {
+    if(selectedItem.classList.contains('filter-brightness')) {
       brightness = filterInput.value;
-    } else if (selectedItem.classList === 'filter-saturation') {
+    } else if (selectedItem.classList.contains('filter-saturation')) {
       saturation = filterInput.value;
-    } else if(selectedItem.classList === 'filter-inversion') {
+    } else if(selectedItem.classList.contains('filter-inversion')) {
       inversion = filterInput.value;
     } else {
       grayscale = filterInput.value;
@@ -96,10 +106,37 @@ const resetBtn = document.querySelector('.reset-filter');
 function resetFilter() {
   brightness = "100", saturation = "100", inversion = "0", grayscale = "0";
   rotate = 0, vertical = 1, horizontal = 1;
+  filterToolBtn[0].click()
   applyFilter()
 
 }
 
 resetBtn.addEventListener('click', () => {
   resetFilter()
+})
+
+// Save image
+
+const saveBtn = document.querySelector('.save-image');
+
+saveBtn.addEventListener('click', () => {
+
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext('2d');
+
+  canvas.width = previewImage.width
+  canvas.height = previewImage.height;
+  context.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`;
+  context.translate(canvas.width / 2, canvas.height / 2);
+  if(rotate !== 0) {
+    context.rotate(rotate * Math.PI / 100);
+  }
+
+  context.scale(horizontal, vertical);
+  context.drawImage(previewImage, -canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
+
+  const link = document.createElement('a');
+  link.download = 'image.jpg';
+  link.href = canvas.toDataURL();
+  link.click()
 })
