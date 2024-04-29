@@ -106,6 +106,7 @@ const resetBtn = document.querySelector('.reset-filter');
 function resetFilter() {
   brightness = "100", saturation = "100", inversion = "0", grayscale = "0";
   rotate = 0, vertical = 1, horizontal = 1;
+  filterValue.textContent= 100
   filterToolBtn[0].click()
   applyFilter()
 
