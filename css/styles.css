@@ -121,7 +121,8 @@ select:-webkit-autofill:focus {
 
 
 .image-editor-filter {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   padding: 15px;
   border: 1px solid #777;
   border-radius:5px;
@@ -230,17 +231,11 @@ select:-webkit-autofill:focus {
   transform: rotateX(180deg);
 }
 
-.image-editor-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .image-editor-file {
   width: 100%;
   height: 343px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
 }
 
 .image-editor-control {
@@ -291,3 +286,29 @@ select:-webkit-autofill:focus {
 .save-image:hover {
   opacity: 1;
 };
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .image-editor-inner {
+    padding: 20px;
+  }
+
+  .filter-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .image-editor-file {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .image-editor-control {
+    flex-direction: column;
+  }
+}
